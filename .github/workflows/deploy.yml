@@ -1,34 +1,24 @@
-name: Deploy Botmania to Hostinger
-
+name: Deploy Botmania
 on:
   push:
     branches:
       - main
-
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: Deploy Job
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
+      - name: Get Code
         uses: actions/checkout@v4
-
-      - name: ⚙️ Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
-      - name: 📦 Install dependencies
-        working-directory: ./
+      - name: Install Deps
         run: npm install
-
-      - name: 🏗️ Build Project
-        working-directory: ./
-        env:
-          CI: false
+      - name: Build
         run: npm run build
-
-      - name: 📂 Sync files to Hostinger
+      - name: FTP Upload
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -37,7 +27,4 @@ jobs:
           local-dir: ./dist/
           server-dir: ./
           protocol: ftp
-          exclude: |
-            **/.git*
-            **/node_modules/**
-            
+          
