@@ -16,7 +16,7 @@ jobs:
           node-version: "20"
       - name: Install Deps
         working-directory: ./frontend
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build
         working-directory: ./frontend
         run: npm run build
