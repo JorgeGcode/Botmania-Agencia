@@ -10,16 +10,24 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Install Deps
+
+      - name: Nuke NPM Lock
         working-directory: ./frontend
-        run: npm install --legacy-peer-deps
-      - name: Build
+        run: rm -rf package-lock.json node_modules
+
+      - name: Install with Yarn
         working-directory: ./frontend
-        run: npm run build
+        run: yarn install
+
+      - name: Build Project
+        working-directory: ./frontend
+        run: yarn build
+
       - name: FTP Upload
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
