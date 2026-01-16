@@ -1,19 +1,21 @@
-// Mock data for Botmania Digital Agency
+// Mock data for Botmania Digital Agency - Light Theme
 
 export const companyInfo = {
   name: "Botmania",
   tagline: "Tu negocio online, rápido, estético y listo para vender.",
   whatsappNumber: "5491123456789",
-  whatsappLink: "https://api.whatsapp.com/send?phone=5491123456789&text=Hola%20Botmania!%20Quiero%20información%20sobre%20sus%20servicios",
+  whatsappLink: "https://api.whatsapp.com/send?phone=5491123456789&text=Hola%20Botmania!%20Quiero%20informaci%C3%B3n%20sobre%20sus%20servicios",
   email: "info@botmania.com.ar",
-  phone: "+54 11 2345-6789"
+  phone: "+54 9 11 2345-6789"
 };
 
 export const heroData = {
-  headline: "Diseño Web Profesional en 48 Horas.",
-  subheadline: "Tu negocio online, rápido, estético y listo para vender. Sin vueltas.",
-  ctaText: "QUIERO MI WEB YA",
-  laptopImage: "https://images.pexels.com/photos/5614135/pexels-photo-5614135.jpeg?auto=compress&cs=tinysrgb&w=800"
+  headline: "En Botmania lanzamos una promoción exclusiva de comienzo de año, Diseño de Sitio Web a Precios",
+  highlightText: "33% OFF",
+  subheadline: "Pensada para empresas y negocios que necesitan un sitio web profesional a medida, rápido y optimizado en un par de días.",
+  subtext: "Estás a unos pasos de tu Sitio Web. Un proceso sencillo, rápido y con los mejores resultados.",
+  ctaText: "EMPIEZA AHORA",
+  heroImage: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
 };
 
 export const pricingPlan = {
@@ -75,6 +77,20 @@ export const faqData = [
     question: "¿Puedo hacer cambios después?",
     answer: "¡Por supuesto! Tu sitio es autoadministrable. Podés editar textos e imágenes cuando quieras."
   }
+];
+
+// Client logos for marquee
+export const clientLogos = [
+  { id: 1, name: "Constructora SRL", initial: "CS" },
+  { id: 2, name: "Consultorio Dental", initial: "CD" },
+  { id: 3, name: "Tech Solutions", initial: "TS" },
+  { id: 4, name: "Estudio Jurídico", initial: "EJ" },
+  { id: 5, name: "Inmobiliaria Norte", initial: "IN" },
+  { id: 6, name: "Fitness Center", initial: "FC" },
+  { id: 7, name: "Restaurante Gourmet", initial: "RG" },
+  { id: 8, name: "Academia Digital", initial: "AD" },
+  { id: 9, name: "Clínica Veterinaria", initial: "CV" },
+  { id: 10, name: "Agencia de Viajes", initial: "AV" }
 ];
 
 // Diseño Gráfico Page Data

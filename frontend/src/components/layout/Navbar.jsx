@@ -8,16 +8,16 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Bot className="w-6 h-6 text-slate-900" />
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Bot className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">
-              Bot<span className="text-emerald-400">mania</span>
+            <span className="text-xl font-bold text-gray-900">
+              Bot<span className="text-blue-600">mania</span>
             </span>
           </Link>
 
@@ -29,13 +29,13 @@ const Navbar = () => {
                 to={link.path}
                 className={`relative text-sm font-medium transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? 'text-emerald-400'
-                    : 'text-slate-300 hover:text-white'
+                    ? 'text-blue-600'
+                    : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {link.name}
                 {location.pathname === link.path && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-emerald-400 rounded-full" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600 rounded-full" />
                 )}
               </Link>
             ))}
@@ -47,7 +47,7 @@ const Navbar = () => {
               href={companyInfo.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
             >
               <span>Contactar</span>
             </a>
@@ -56,7 +56,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+            className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -69,7 +69,7 @@ const Navbar = () => {
           isOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-4 py-4 space-y-2 bg-slate-900/95 border-t border-slate-800">
+        <div className="px-4 py-4 space-y-2 bg-white border-t border-gray-100">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -77,8 +77,8 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className={`block px-4 py-3 rounded-lg transition-colors duration-300 ${
                 location.pathname === link.path
-                  ? 'bg-emerald-500/10 text-emerald-400'
-                  : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                  ? 'bg-blue-50 text-blue-600'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >
               {link.name}
@@ -88,7 +88,7 @@ const Navbar = () => {
             href={companyInfo.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full text-center px-4 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold rounded-lg transition-colors mt-4"
+            className="block w-full text-center px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors mt-4"
           >
             Contactar por WhatsApp
           </a>

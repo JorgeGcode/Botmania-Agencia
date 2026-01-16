@@ -5,20 +5,20 @@ import { companyInfo, navLinks } from '../../data/mock';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 border-t border-slate-800">
+    <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-lg flex items-center justify-center">
-                <Bot className="w-6 h-6 text-slate-900" />
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                <Bot className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold text-white">
-                Bot<span className="text-emerald-400">mania</span>
+                Bot<span className="text-blue-400">mania</span>
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Agencia digital especializada en diseño web rápido y efectivo. Tu presencia online, sin vueltas.
             </p>
           </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-slate-400 hover:text-emerald-400 transition-colors text-sm"
+                    className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="text-white font-semibold mb-4">Servicios</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>Diseño Web Express</li>
               <li>Diseño de Logos</li>
               <li>SEO Local</li>
@@ -60,7 +60,7 @@ const Footer = () => {
                   href={companyInfo.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors text-sm"
+                  className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp
@@ -69,7 +69,7 @@ const Footer = () => {
               <li>
                 <a
                   href={`mailto:${companyInfo.email}`}
-                  className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors text-sm"
+                  className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm"
                 >
                   <Mail className="w-4 h-4" />
                   {companyInfo.email}
@@ -78,7 +78,7 @@ const Footer = () => {
               <li>
                 <a
                   href={`tel:${companyInfo.phone}`}
-                  className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors text-sm"
+                  className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
                   {companyInfo.phone}
@@ -90,19 +90,19 @@ const Footer = () => {
             <div className="flex items-center gap-4 mt-4">
               <a
                 href="#"
-                className="w-8 h-8 bg-slate-800 hover:bg-emerald-500/20 rounded-lg flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-all"
+                className="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-8 h-8 bg-slate-800 hover:bg-emerald-500/20 rounded-lg flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-all"
+                className="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <Facebook className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-8 h-8 bg-slate-800 hover:bg-emerald-500/20 rounded-lg flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-all"
+                className="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -111,12 +111,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Botmania. Todos los derechos reservados.
           </p>
-          <p className="text-slate-500 text-sm">
-            Hecho con 💚 en Argentina
+          <p className="text-gray-500 text-sm">
+            Hecho con 💙 en Argentina
           </p>
         </div>
       </div>
