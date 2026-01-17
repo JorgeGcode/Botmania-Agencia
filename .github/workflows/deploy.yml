@@ -30,7 +30,6 @@ jobs:
         working-directory: ./frontend
         run: yarn build
 
-      # Mantenemos este paso de seguridad para normalizar 'dist' o 'build'
       - name: Prepare Artifact
         working-directory: ./frontend
         run: |
@@ -49,8 +48,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Carpeta local (normalizada en el paso anterior)
           local-dir: ./frontend/deploy_artifact/
-          # SOLUCIÓN: Usamos './' porque el usuario FTP ya inicia en la carpeta correcta
           server-dir: ./
           protocol: ftp
+          clean: true  # <--- ESTA ES LA CLAVE. Borra la basura vieja (incluida la carpeta domains errónea)
