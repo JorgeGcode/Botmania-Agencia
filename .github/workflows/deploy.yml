@@ -30,20 +30,16 @@ jobs:
         working-directory: ./frontend
         run: yarn build
 
-      # PASO DEPURACIÓN: Esto detecta automáticamente si es 'dist' o 'build'
-      # y lo mueve a una carpeta estandarizada para evitar errores de ruta.
+      # Mantenemos este paso de seguridad para normalizar 'dist' o 'build'
       - name: Prepare Artifact
         working-directory: ./frontend
         run: |
           if [ -d "dist" ]; then
-            echo "Detectado Vite (dist). Renombrando..."
             mv dist deploy_artifact
           elif [ -d "build" ]; then
-            echo "Detectado CRA (build). Renombrando..."
             mv build deploy_artifact
           else
-            echo "ERROR CRÍTICO: No se encontró ni 'dist' ni 'build'. Listando archivos:"
-            ls -la
+            echo "ERROR: No se encontró build ni dist"
             exit 1
           fi
 
@@ -53,8 +49,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Usamos la carpeta estandarizada que creamos arriba
+          # Carpeta local (normalizada en el paso anterior)
           local-dir: ./frontend/deploy_artifact/
-          # Ruta basada en tu captura de Hostinger (Usuario principal -> domains -> ...)
-          server-dir: domains/botmania.com.ar/public_html/
+          # SOLUCIÓN: Usamos './' porque el usuario FTP ya inicia en la carpeta correcta
+          server-dir: ./
           protocol: ftp
