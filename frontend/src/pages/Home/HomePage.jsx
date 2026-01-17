@@ -66,7 +66,7 @@ const HomePage = () => {
               <div className="relative z-10">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <img
-                    src={heroData.heroImage}
+                    src="https://botmania.com.ar/assets/hero-img.jpg"
                     alt="Profesional trabajando en diseño web"
                     className="w-full h-auto object-cover"
                   />
