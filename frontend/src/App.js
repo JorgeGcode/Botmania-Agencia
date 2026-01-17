@@ -6,7 +6,7 @@ import HomePage from "./pages/Home/HomePage";
 import DisenoPage from "./pages/Diseno/DisenoPage";
 import MarketingPage from "./pages/Marketing/MarketingPage";
 import AgenciaPage from "./pages/Agencia/AgenciaPage";
-import BudgetPage from "./pages/Budget/BudgetPage";
+import BudgetPage from "./pages/presupuesto/BudgetPage";
 
 function App() {
   return (
